@@ -1,0 +1,33 @@
+{
+  "name": "christmas-twitter",
+  "version": "1.0.0",
+  "description": "Express &amp; HBS &amp; Mongo lab",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon -e hbs,js,css,env app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franlopezhack/christmas-twitter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franlopezhack/christmas-twitter/issues"
+  },
+  "homepage": "https://github.com/franlopezhack/christmas-twitter#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.1.2",
+    "morgan": "^1.10.0"
+  }
+}

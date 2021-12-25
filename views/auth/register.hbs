@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+
+    <div class="col-12  col-sm-4 pt-5">
+        <h1>Register</h1>
+        <form action="/register" method="POST" class="mt-5">
+            <div class="col-12 ">
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+                    <input type="text" name="name" value="{{ user.name}}"
+                        class="form-control {{#if errors.name}}is-invalid{{/if}}" placeholder="User name" />
+                    <div class="invalid-feedback"> {{ errors.name }}</div>
+
+                </div>
+            </div>
+
+
+            <div class="col-12  ">
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
+                    <input type="password" name="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" placeholder="Password..." />
+                    <div class="invalid-feedback"> {{ errors.password }}</div>
+                </div>
+            </div>
+
+            <div class="col-12  ">
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-image fa-fw"></i></span>
+                    <input type="text" name="avatar" value="{{ user.avatar }}" class="form-control {{#if errors.avatar}}is-invalid{{/if}}" placeholder="Avatar" />
+                    <div class="invalid-feedback"> {{ errors.avatar }}</div>
+
+                </div>
+            </div>
+
+             <div class="col-12  ">
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
+                    <input type="text" name="email" value="{{ user.email }}" class="form-control {{#if errors.email}}is-invalid{{/if}}" placeholder="example@example.org" />
+                    <div class="invalid-feedback"> {{ errors.email }}</div>
+
+                </div>
+            </div>
+
+            
+
+            <div class="input-group mb-2">
+                <span class="input-group-text"><i class="fa fa-book fa-fw"></i></span>
+                <textarea class="form-control  {{#if errors.bio}}is-invalid{{/if}}" name="bio" value="{{ user.bio }}" aria-label="With textarea" placeholder="Your Bio..."></textarea>
+                <div class="invalid-feedback "> {{ errors.bio }}</div>
+            </div>
+
+            <div class="d-grid" >
+                <button type="submit" class="btn btn-primary text-uppercase btn-sm">Register</button>
+                <hr>
+                <a href="/login" class="btn btn-secondary btn-sm ">LOGIN</a>
+            </div>
+
+
+        </form>
+    </div>

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-4 ">
+        <h1>LOGIN</h1>
+        <form action="/login" method="post">
+            
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+                    <input type="text" name="email" value="{{ user.email }}" class="form-control {{#if errors.eamil }} is-invalid {{/if}}"
+                        placeholder="User email" />
+                    <div class="invalid-feedback">{{ errors.email}}.</div>
+
+                </div>
+        
+
+            
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
+                    <input type="text" name="password" class="form-control  {{#if errors.password }} is-invalid {{/if}}" placeholder="Password" />
+                    <div class="invalid-feedback"> {{ errors.password }}</div>
+
+                </div>
+    
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-sm text-uppercase">login</button>
+                <hr>
+                <button href="/register" class="btn btn-secondary btn-sm text-uppercase">
+                    Register
+                </button>
+                
+            </div>
+        </form>
+    </div>
+
+</div>
