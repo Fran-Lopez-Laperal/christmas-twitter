@@ -13,7 +13,7 @@ const postSchema = new Schema({
         required: [true, 'contact id is required']
     }
 
-}, { timestamps: true })
+}, { timestamp: true })
 
 
 const Post = mongoose.model("Post", postSchema);

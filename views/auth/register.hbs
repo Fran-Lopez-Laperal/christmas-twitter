@@ -44,7 +44,7 @@
 
             <div class="input-group mb-2">
                 <span class="input-group-text"><i class="fa fa-book fa-fw"></i></span>
-                <textarea class="form-control  {{#if errors.bio}}is-invalid{{/if}}" name="bio" value="{{ user.bio }}" aria-label="With textarea" placeholder="Your Bio..."></textarea>
+                <textarea class="form-control  {{#if errors.bio }}is-invalid{{/if}}" name="bio" value="{{ user.bio }}" aria-label="With textarea" placeholder="Your Bio..."></textarea>
                 <div class="invalid-feedback "> {{ errors.bio }}</div>
             </div>
 
@@ -57,3 +57,5 @@
 
         </form>
     </div>
+
+   

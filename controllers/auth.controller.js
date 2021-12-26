@@ -2,14 +2,13 @@ const createError = require("http-errors");
 const User = require("../models/user.model");
 const mongoose = require("mongoose");
 
-
 module.exports.register = (req, res, next) => {
     res.render('auth/register')
 }
 
 
 module.exports.doRegister = (req, res, next) => {
-    function renderWhithErrors(erros) {
+    function renderWhithErrors(errors) {
         res.render("auth/register"), {
             errors: errors,
             user: req.body
@@ -47,24 +46,38 @@ module.exports.doLogin = (req, res, next) => {
             errors: { password: 'email or password incorrect' }
         })
     }
+
     const { email, password } = req.body;
     User.findOne({ email })
         .then(user => {
             if (!user) {
-                renderWhithErrors();
+                renderWhithErrors()
             } else {
                 return user.checkPassword(password)
                     .then(match => {
                         if (!match) {
-                            renderWhithErrors();
+                            renderWhithErrors()
                         } else {
-
+                            //cookie de sesion
+                            req.session.userId = user.id
+                            
+                            res.redirect("/profile")
                         }
                     })
             }
         })
         .catch(error => next(error))
+
 }
+
+
+module.exports.logout = (req, res, next) => {
+    req.session.destroy();
+    res.redirect("/login");
+}
+
+
+
 
 
 

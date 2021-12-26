@@ -1,15 +1,25 @@
-<nav>
-    <div style="height: 102px; background-color: #0084ff;">
 
-        <div>
-            <a href="/"><img src="./images/descarga.png" alt="twitter" class="ms-4 mt-3 me-5"
-                    style="width: 70px;" /></a>
-            <a href="/register" class="me-5" style="text-decoration: none; color:cornsilk"><i class="fa fa-plus fa-fw"
-                    style="color: cornsilk;"></i>register</a>
-            <a href="/login" class="me-5" style="text-decoration: none; color:cornsilk"><i class="fa fa-plus fa-fw"
-                    style="color: cornsilk;"></i>LOGIN</a>
-            <a href="/" style="text-decoration:none; color: cornsilk">home</a>
-        </div>
-
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container" style="height: 120px; background-color:#0084ff">
+    <a href="/"><img src="/public/images/descarga.png" alt="twitter" class="ms-4 mt-3 me-5" style="width: 70px;" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+      aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a></li>
+        </ul>
+      <ul class="navbar-nav">
+        {{#if currentUser}}
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">{{ currentUser.email }}</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout"><i class="fa fa-sign-out"></i></a></li>
+        {{else}}
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/register">Register</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/login">Login</a></li>
+        {{/if}}
+      </ul>
     </div>
+  </div>
 </nav>

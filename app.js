@@ -11,26 +11,31 @@ const app = express();
 
 require("./config/hbs.config");
 require("./config/db.config");
+const {session, loadUser} = require("./config/session.config")
 
 app.set("views", `${__dirname}/views`);
 app.set("view engine", "hbs");
 
 /** Middlewares */
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 app.use(logger("dev"));
-app.use(express.static(`${__dirname}/public`));
+//app.use(express.static(`${__dirname}/public`));
+app.use(session);
+app.use(loadUser);
 
 
 const routes = require("./config/routes.config");
 app.use("/", routes);
 
-app.use((req, res, next) => {
+
+
+app.use((error, req, res, next) => {
     if (error instanceof mongoose.Error.CastError && error.message.includes('ObjectId')) {
-        next(createError(404, 'Resource not found'));
+      next(createError(404, 'Resource not found'));
     } else {
-        next(error)
+      next(error);
     }
-})
+  })
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Application running at port ${port}`));

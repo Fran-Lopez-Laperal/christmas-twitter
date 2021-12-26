@@ -28,6 +28,7 @@ const schema = new Schema(
             type: String,
             required: [true, "Password is required"],
             minlength: [8, "Password needs at last 8 chars"],
+            trim: true,
             match: [PASSWORD_PATTERN, "Password is not valid"],
 
         },
@@ -41,9 +42,7 @@ const schema = new Schema(
         bio: {
             type: String,
         },
-    },
-
-    { timestamp: true }
+    }, { timestamp: true }
 
 );
 
