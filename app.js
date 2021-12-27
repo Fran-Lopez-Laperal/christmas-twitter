@@ -19,7 +19,7 @@ app.set("view engine", "hbs");
 /** Middlewares */
 app.use(express.urlencoded({ extended: false }));
 app.use(logger("dev"));
-//app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`${__dirname}/public`));
 app.use(session);
 app.use(loadUser);
 

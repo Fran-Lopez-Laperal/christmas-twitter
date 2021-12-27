@@ -36,7 +36,8 @@ const schema = new Schema(
         avatar: {
             type: String,
             required: [true, "Avatar is required"],
-            default: 'https://i.pravatar.cc/300',
+            default: 
+            "https://picsum.photos/id/237",
         },
 
         bio: {
@@ -45,6 +46,8 @@ const schema = new Schema(
     }, { timestamp: true }
 
 );
+
+
 
 //no utilizar nunca aqui una funcion flecha porque el usuario es this y las funciones flecha no tienen this
 schema.pre('save', function (next) {

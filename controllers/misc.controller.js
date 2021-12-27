@@ -1,4 +1,3 @@
-module.exports.home = (req, res, next) => {
-    console.log('user', req.user)
-    res.render("misc/home")
-}
+// module.exports.home = (req, res, next) => {
+//     res.render("misc/home")
+// }

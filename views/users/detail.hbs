@@ -1,0 +1,20 @@
+<div class="container">
+
+    <h1>DETAIL</h1>
+
+    <img src="{{ user.avatar }}" alt="">
+    <h5>{{user.name}}</h5>
+    <small><i class="fa fa-steam"></i> {{user.bio}}</small>
+
+    <div>
+    <form action="/users/{{user.id}}/delete" method="post">
+        <button class="btn btn-danger"></button>
+    </form>
+
+</div>
+
+</div>
+
+
+
+

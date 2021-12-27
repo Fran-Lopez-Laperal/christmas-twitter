@@ -11,7 +11,12 @@ const postSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Users',
         required: [true, 'contact id is required']
-    }
+    },
+
+    likes: {
+        type: Number,
+        default: 0,
+    },
 
 }, { timestamp: true })
 
