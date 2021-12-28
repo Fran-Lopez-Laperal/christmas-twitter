@@ -33,11 +33,10 @@ const schema = new Schema(
 
         },
 
-        avatar: {
+        avatarUrl: {
             type: String,
             required: [true, "Avatar is required"],
-            default: 
-            "https://picsum.photos/id/237",
+            default: 'https://i.pravatar.cc/300',
         },
 
         bio: {

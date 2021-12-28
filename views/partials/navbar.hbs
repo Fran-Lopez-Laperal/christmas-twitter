@@ -2,7 +2,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container" style="height: 120px; background-color:#0084ff">
-   <img src="/public/images/kiev-ukraine-may-08-2015-260nw-281364161.jpeg" alt="twitter">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
       aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,7 +12,8 @@
         </ul>
       <ul class="navbar-nav">
         {{#if currentUser}}
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">{{ currentUser.email }}</a></li>
+          <li class="nav-item"><img class="em-20" src="{{currentUser.avatarUrl}}" alt="avatar" style="width: 20%;"></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/">{{ currentUser.email }}</a></li>
           <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout"><i class="fa fa-sign-out"></i></a></li>
         {{else}}
           <li class="nav-item"><a class="nav-link" aria-current="page" href="/register">Register</a></li>

@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
     text: {
         type: String,
-        required: [true, 'Text is requred']
+        required: [true, 'Text is requred'],
+        maxlength: [200,'200 chars maximun']
     },
 
     author: {

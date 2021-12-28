@@ -1,22 +1,43 @@
-<div class="container">
+<div class="container  pt-5 mb-5 col-12 col-md-3">
 
     <h1>DETAIL</h1>
 
-    <img src="{{ user.avatar }}" alt="">
-    <h5>{{user.name}}</h5>
-    <small><i class="fa fa-steam"></i> {{user.bio}}</small>
+    <img src="{{ user.avatarUrl }}" alt="avatar">
+    <h5> <i class="fa fa-user"></i>{{user.name}}</h5>
+    <small><i class="fa fa-book"></i> {{user.bio}}</small>
 
     <div>
-    <form action="/users/{{user.id}}/delete" method="post">
-        <button type="submit" class="btn btn-danger btn-sm">
-            Delete
-        </button>
-    </form>
+        <form action="/users/{{user.id}}/delete" method="post">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+        </form>
+    </div>
 
+
+
+
+    <div class="col-12 mt-5">
+        <h2>POSTS</h2>
+        <div class="row">
+            <div class="col-8 col-md-8">
+                <form action="/users/{{user.id}}/posts" method="post">
+
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-edit fa-fw"></i> </span>
+                        <textarea class="form-control {{#if errors.text}} is-invalid {{/if}}" placeholder="New post"></textarea>
+                        <div class="invalid-feedback">{{ errors.text }}</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Post</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row row-columns-4">
+        {{#each posts as |post|}}
+            <div class="col">
+               <p>{{post.text}}</p>
+            </div>
+        {{/each}}
+    </div>
 </div>
-
-</div>
-
-
-
-

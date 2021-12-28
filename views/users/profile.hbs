@@ -1,21 +1,43 @@
-<div class="container col-12 col-me-2">
+<div class="container col-12 col-me-2 ">
 
 
-  <div class="flex-grow ml-2">
+  <div class="flex-grow ml-2 pt-5 ">
     {{#each users as |user|}}
-    <div class="container col-12 col-sm-3">
+    <div class="container col-12 col-sm-3 mb-5">
       <div class="card" style="width: 18rem;">
-        <img src="{{user.avatar}}" class="card-img-top" alt="avatar">
+        <img src="{{user.avatarUrl}}" class="card-img-top" alt="avatar">
         <div class="card-body">
           <h5 class="card-title">{{ user.name }}</h5>
-          <p class="card-text">{{ user.bio }}</p>
+          
         </div>
 
         <div class="card-body">
-          <a href="/users/{{ user.id }}" class="card-link">{{ user.name }}</a>
+          <a href="/users/{{ user.id }}" class="card-link">PROFILE</a>
         </div>
       </div>
     </div>
 
     {{/each}}
+
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

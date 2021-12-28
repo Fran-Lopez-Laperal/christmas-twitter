@@ -1,5 +1,6 @@
-
-const { populate } = require('../models/user.model');
+const createError = require('http-errors')
+const mongoose = require("mongoose")
+const Post = require('../models/post.model');
 const User = require('../models/user.model');
 
 
@@ -20,26 +21,27 @@ module.exports.profile = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
     User.findById(req.params.id)
-
         .then((user) => {
             if (user) {
-                res.render("users/detail", { user })
+                return Post.find({ user: req.params.id })
+                    .then(posts => res.render("users/detail", { user, posts }))
             } else {
-                res.redirect("/profile")
+                next(createError(404, 'User not found'))
             }
         })
-        .catch((error) => {
-            next(error);
-        });
+        .catch((error) => next(error))
 };
 
 
-module.exports.delete =( req, res, next) => {
+module.exports.delete = (req, res, next) => {
     User.findByIdAndDelete(req.params.id)
-    .then(() => {
-        res.redirect("/");
-    })
-    .catch((error) => {
-        next(error)
-    });
+        .then(user => {
+            if (user) {
+                res.redirect(`/users`);
+            } else {
+                next(createError(404, 'user not found'))
+            }
+
+        })
+        .catch((error) => next(error));
 };
