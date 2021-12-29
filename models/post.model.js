@@ -10,7 +10,7 @@ const postSchema = new Schema({
 
     author: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Users',
+        ref: 'User',
         required: [true, 'contact id is required']
     },
 
@@ -19,7 +19,7 @@ const postSchema = new Schema({
         default: 0,
     },
 
-}, { timestamp: true })
+}, { timestamps: true })
 
 
 const Post = mongoose.model("Post", postSchema);

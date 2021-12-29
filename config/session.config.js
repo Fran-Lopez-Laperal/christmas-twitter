@@ -5,7 +5,7 @@ const User = require('../models/user.model');
 
 
 const session = expressSession({
-    secret: process.env.SSESION_SECRET,
+    secret: process.env.SESSION_SECRET,
     saveUninitialized: false,
     resave: false,
     cookie: {

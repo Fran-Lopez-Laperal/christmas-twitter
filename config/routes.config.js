@@ -11,13 +11,13 @@ const secure = require("../middlewares/secure.mid")
 //router.get("/", misc.home);
 
 //routes users
-router.get("/", users.profile);
-router.get("/users/:id", secure.isAuthenticated, users.detail);
+router.get("/", users.list);
+router.get("/users/:id", secure.isAuthenticated, users.profile);
 router.post("/users/:id/delete", secure.isAuthenticated, users.delete)
 
 //route posts
-router.post("/users/:userId/posts", secure.isAuthenticated, posts.doDetail)
 
+router.post("/posts/:userId/create", posts.create)
 
 
 // routes to authentication

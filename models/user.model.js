@@ -38,11 +38,14 @@ const schema = new Schema(
             required: [true, "Avatar is required"],
             default: 'https://i.pravatar.cc/300',
         },
-
+        posts: [{ 
+            type : mongoose.Schema.Types.ObjectId, 
+            ref: 'Post' 
+        }],
         bio: {
             type: String,
         },
-    }, { timestamp: true }
+    }, { timestamps: true }
 
 );
 
