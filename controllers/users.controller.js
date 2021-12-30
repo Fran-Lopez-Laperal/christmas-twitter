@@ -19,6 +19,7 @@ module.exports.list = (req, res, next) => {
 
 
 
+
 module.exports.profile = (req, res, next) => {
     User.findById(req.params.id)
         .populate('posts')
@@ -45,3 +46,4 @@ module.exports.delete = (req, res, next) => {
         })
         .catch((error) => next(error));
 };
+

@@ -36,7 +36,7 @@ const schema = new Schema(
         avatarUrl: {
             type: String,
             required: [true, "Avatar is required"],
-            default: 'https://i.pravatar.cc/300',
+            default: 'https://i.pravatar.cc/150?',
         },
         posts: [{ 
             type : mongoose.Schema.Types.ObjectId, 

@@ -40,6 +40,3 @@ module.exports.create = (req, res, next) => {
 }
 
 
-module.exports.post = (req, res, next) => {
-    res.render("posts/postlist")
-}

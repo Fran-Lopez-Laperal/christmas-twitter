@@ -61,7 +61,7 @@ module.exports.doLogin = (req, res, next) => {
                             //cookie de sesion
                             req.session.userId = user.id
                             
-                            res.redirect("/")
+                            res.redirect("/list")
                         }
                     })
             }

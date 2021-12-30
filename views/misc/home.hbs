@@ -1,1 +1,23 @@
 
+
+<div class="row row-columns-4 mt-5">
+
+        <h3>new posts</h3>
+        {{#each user.posts as |post|}}
+        <div class="col mb-2">
+            
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1>{{user.name}}</h1>
+                    <p class="card-text">{{post.text}}</p>
+                   
+                </div>
+            </div>
+
+
+        </div>
+
+        {{/each}}
+
+    </div>

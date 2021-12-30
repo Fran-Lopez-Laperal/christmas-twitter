@@ -14,7 +14,8 @@
 
 
 
-<h1 class="title">POSTS</h1><div class="col-12 mt-5">
+    <h1 class="title">POSTS</h1>
+    <div class="col-12 mt-5 m">
         <h2>POSTS</h2>
         <div class="row">
             <div class="col-8 col-md-8">
@@ -22,7 +23,8 @@
 
                     <div class="input-group">
                         <span class="input-group-text"><i class="fa fa-edit fa-fw"></i> </span>
-                        <textarea name="text" class="form-control {{#if errors.text}} is-invalid {{/if}}" placeholder="New post"></textarea>
+                        <textarea name="text" class="form-control {{#if errors.text}} is-invalid {{/if}}"
+                            placeholder="New post"></textarea>
                         <div class="invalid-feedback">{{ errors.text }}</div>
                     </div>
                     <button type="submit" class="btn btn-primary">Add Post</button>
@@ -31,13 +33,29 @@
             </div>
         </div>
     </div>
-    
-    <div class="row row-columns-4">
+
+
+
+
+    <div class="row row-columns-4 mt-5">
+
+        <h3>new posts</h3>
         {{#each user.posts as |post|}}
-            <div class="col">
-               <p>{{post.text}}</p>
+        <div class="col mb-2">
+            
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+
+                    <p class="card-text">{{post.text}}</p>
+                   
+                </div>
             </div>
+
+
+        </div>
+
         {{/each}}
+
     </div>
 </div>
-    
