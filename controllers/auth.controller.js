@@ -61,7 +61,7 @@ module.exports.doLogin = (req, res, next) => {
                             //cookie de sesion
                             req.session.userId = user.id
                             
-                            res.redirect("/list")
+                            res.redirect("/")
                         }
                     })
             }
@@ -73,7 +73,7 @@ module.exports.doLogin = (req, res, next) => {
 
 module.exports.logout = (req, res, next) => {
     req.session.destroy();
-    res.redirect("/login");
+    res.redirect("/");
 }
 
 
