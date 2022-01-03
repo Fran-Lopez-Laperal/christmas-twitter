@@ -8,7 +8,7 @@ const secure = require("../middlewares/secure.mid")
 
 
 //route misc
-router.get("/", misc.home);
+//router.get("/", misc.home);
 
 //routes users
 router.get("/list", users.list);
@@ -27,7 +27,7 @@ router.post("/posts/:userId/create", posts.create)
 // routes to authentication
 router.get("/register", auth.register);
 router.post("/register", auth.doRegister);
-router.get("/login", auth.login);
+router.get("/", auth.login);
 router.post("/login", auth.doLogin);
 router.get("/logout", auth.logout);
 

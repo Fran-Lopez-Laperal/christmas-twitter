@@ -1,58 +1,72 @@
-<div class="row justify-content-center">
+<div class="container register">
+    <div class="container row">
+        <div class="image">
+            <img src="/images/descarga.png" alt="twitter">
+            <legend>REGISTER</legend>
+        </div>
 
-    <div class="col-12  col-sm-4 pt-5">
-        <h1>Register</h1>
-        <form action="/register" method="POST" class="mt-5">
-            <div class="col-12 ">
+        <div class="container reg-form">
+            <form action="/register" method="POST" class="mt-5">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <div class="input-group mb-1">
+                        <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+                        <input type="text" class="form-control {{#if errors.name}}is-invalid{{/if}}" name="name"
+                            value="{{ user.name}}" placeholder="User name" />
+                        <div class="invalid-feedback"> {{ errors.name }}</div>
+
+                    </div>
+                </div>
+
+
+
                 <div class="input-group mb-1">
-                    <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
-                    <input type="text" class="form-control {{#if errors.name}}is-invalid{{/if}}" name="name" value="{{ user.name}}" placeholder="User name" />
-                    <div class="invalid-feedback"> {{ errors.name }}</div>
+                    <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
+                    <input type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" name="password"
+                        placeholder="Password..." />
+                    <div class="invalid-feedback"> {{ errors.password }}</div>
+                </div>
+
+
+
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-image fa-fw"></i></span>
+                    <input type="text" class="form-control {{#if errors.avatar}}is-invalid{{/if}}" name="avatar"
+                        value="{{ user.avatar }}" placeholder="Avatar" />
+                    <div class="invalid-feedback"> {{ errors.avatar }}</div>
+
 
                 </div>
-            </div>
+
+
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
+                    <input type="text" class="form-control {{#if errors.email}}is-invalid{{/if}}" name="email"
+                        value="{{ user.email }}" placeholder="example@example.org" />
+                    <div class="invalid-feedback"> {{ errors.email }}</div>
+
+
+                </div>
 
 
 
-            <div class="input-group mb-1">
-                <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
-                <input type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" name="password" placeholder="Password..." />
-                <div class="invalid-feedback"> {{ errors.password }}</div>
-            </div>
+                <div class="input-group mb-2">
+                    <span class="input-group-text"><i class="fa fa-book fa-fw"></i></span>
+                    <textarea class="form-control  {{#if errors.bio }}is-invalid{{/if}}" name="bio"
+                        aria-label="With textarea" placeholder="Your Bio..."></textarea>
+                    <div class="invalid-feedback "> {{ errors.bio }}</div>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary text-uppercase btn-sm">Register</button>
+                    <hr>
+                    <a href="/login" class="btn btn-secondary btn-sm ">LOGIN</a>
+                </div>
 
 
-
-            <div class="input-group mb-1">
-                <span class="input-group-text"><i class="fa fa-image fa-fw"></i></span>
-                <input type="text" class="form-control {{#if errors.avatar}}is-invalid{{/if}}" name="avatar" value="{{ user.avatar }}" placeholder="Avatar" />
-                <div class="invalid-feedback"> {{ errors.avatar }}</div>
+            </form>
+        </div>
 
 
-            </div>
-
-
-            <div class="input-group mb-1">
-                <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
-                <input type="text" class="form-control {{#if errors.email}}is-invalid{{/if}}" name="email"value="{{ user.email }}" placeholder="example@example.org" />
-                <div class="invalid-feedback"> {{ errors.email }}</div>
-
-
-            </div>
-
-
-
-            <div class="input-group mb-2">
-                <span class="input-group-text"><i class="fa fa-book fa-fw"></i></span>
-                <textarea class="form-control  {{#if errors.bio }}is-invalid{{/if}}" name="bio" aria-label="With textarea" placeholder="Your Bio..."></textarea>
-                <div class="invalid-feedback "> {{ errors.bio }}</div>
-            </div>
-
-            <div class="d-grid">
-                <button type="submit" class="btn btn-primary text-uppercase btn-sm">Register</button>
-                <hr>
-                <a href="/login" class="btn btn-secondary btn-sm ">LOGIN</a>
-            </div>
-
-
-        </form>
     </div>
+
+</div>
